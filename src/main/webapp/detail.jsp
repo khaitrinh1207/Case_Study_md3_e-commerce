@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: khai trinh
-  Date: 22/02/2021
-  Time: 11:39 SA
+  Date: 24/02/2021
+  Time: 9:15 CH
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -52,44 +52,31 @@
 
 <%--contents--%>
 <div class="row">
-    <div class="col-sm-3">
-        <div class="card bg-light mb-3">
-            <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i>CATEGORIES</div>
-            <ul class="list-group category_block">
-                <c:forEach items="${categoryList}" var="cate">
-                <li class="list-group-item text-white"><a href="/category?cate_id=${cate.cate_id}">${cate.cate_name}</a></li>
-                </c:forEach>
-            </ul>
-        </div>
+    <div class="col">
 
     </div>
-    <div class="col-sm-9">
+    <div class="col-10">
+        <div class="row" style="text-align: center; margin-left: 30px">
+            <h3>Chi tiết sản phẩm</h3>
+        </div>
         <div class="row">
-            <c:forEach items="${shoesList}" var="s">
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="${s.image}" alt="Card image cap" width="300" height="300">
-                        <div class="card-body">
-                            <h5 class="card-title">${s.name}</h5>
-                            <p class="card-text">${s.price}$</p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Mô tả: ${s.description}</li>
-                        </ul>
-                        <div class="card-body">
-                            <a href="/detail?s_id=${s.id}" class="card-link">Chi tiết</a>
-                            <a href="#" class="card-link">Thêm vào giỏ</a>
-                        </div>
-                    </div>
-                </div>
-            </c:forEach>
+            <div class="col-4">
+                <img src="${shoeDetail.image}" width="250" height="300"/>
+            </div>
+            <div class="col-8">
+                <h4 style="color: red">${shoeDetail.name}</h4>
+                <h5>Thương hiệu: <i><b style="color: darkblue">${trademark}</b></i></h5>
+                <h5>Mô tả: <i>${shoeDetail.description}</i></h5>
+                <h6>Price:  <b>${shoeDetail.price}$</b></h6>
+                <h6>đơn vị tính : đôi</h6>
+                <h6>Size: <input type="number" name="size" min="38" max="43" value="41"></h6>
+                <h6>Số lượng: <input type="number" name="amount" min="1" max="999" value="1"></h6>
+                <a href="#" style="font-size: xx-large"><u>Thêm vào giỏ</u></a>
+            </div>
         </div>
     </div>
 </div>
-<footer style="text-align: center">
-    <p>Made by: Trịnh Công Khải</p>
-    <p>Email: Khaitrinh1207@gmail.com</p>
-    <p>ĐT: 0987654321</p>
-</footer>
+
+
 </body>
 </html>

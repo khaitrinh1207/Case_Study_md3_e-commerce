@@ -1,22 +1,22 @@
 package model;
 
-public class Product {
+public class Shoes {
     private int id;
+    private int id_category;
     private String name;
+    private int price;
     private String image;
-    private double price;
-    private String title;
     private String description;
 
-    public Product() {
+    public Shoes() {
     }
 
-    public Product(int id, String name, String image, double price, String title, String description) {
+    public Shoes(int id, int id_category, String name, int price, String image, String description) {
         this.id = id;
+        this.id_category = id_category;
         this.name = name;
-        this.image = image;
         this.price = price;
-        this.title = title;
+        this.image = image;
         this.description = description;
     }
 
@@ -28,6 +28,14 @@ public class Product {
         this.id = id;
     }
 
+    public int getId_category() {
+        return id_category;
+    }
+
+    public void setId_category(int id_category) {
+        this.id_category = id_category;
+    }
+
     public String getName() {
         return name;
     }
@@ -36,28 +44,20 @@ public class Product {
         this.name = name;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     public String getImage() {
         return image;
     }
 
     public void setImage(String image) {
         this.image = image;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getDescription() {
@@ -70,12 +70,12 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
+        return "Shoes{" +
                 "id=" + id +
+                ", id_category=" + id_category +
                 ", name='" + name + '\'' +
-                ", image='" + image + '\'' +
                 ", price=" + price +
-                ", title='" + title + '\'' +
+                ", image='" + image + '\'' +
                 ", description='" + description + '\'' +
                 '}';
     }

@@ -1,16 +1,23 @@
 package service;
 
-import model.Product;
+import model.Category;
+import model.Shoes;
 
 import java.util.List;
 
 public interface IProductService {
 
-    List<Product> selectAll();
+    List<Shoes> selectAllShoes();
 
-    void findbyId(int id);
+    List<Category> selectAllCate();
 
-    void insertProduct(Product product);
+    List<Shoes> findByNameShoes(String name);
+
+    List<Shoes> CategoryByID(String id);
+
+    Shoes selectShoesById(String id);
+
+    void insertProduct(Shoes shoes);
 
     void editProduct(int id);
 

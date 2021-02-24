@@ -2,18 +2,17 @@
   Created by IntelliJ IDEA.
   User: khai trinh
   Date: 22/02/2021
-  Time: 11:39 SA
+  Time: 12:04 CH
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>NHẤC CHÂN LÊN</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <%-- HEAD --%>
@@ -57,27 +56,26 @@
             <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i>CATEGORIES</div>
             <ul class="list-group category_block">
                 <c:forEach items="${categoryList}" var="cate">
-                <li class="list-group-item text-white"><a href="/category?cate_id=${cate.cate_id}">${cate.cate_name}</a></li>
+                    <li class="list-group-item text-white"><a href="/category?cate_id=${cate.cate_id}">${cate.cate_name}</a></li>
                 </c:forEach>
             </ul>
         </div>
-
     </div>
     <div class="col-sm-9">
         <div class="row">
-            <c:forEach items="${shoesList}" var="s">
+            <c:forEach items="${listFindByName}" var="p">
                 <div class="col">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="${s.image}" alt="Card image cap" width="300" height="300">
+                        <img class="card-img-top" src="${p.image}" alt="Card image cap" width="300" height="300">
                         <div class="card-body">
-                            <h5 class="card-title">${s.name}</h5>
-                            <p class="card-text">${s.price}$</p>
+                            <h5 class="card-title">${p.name}</h5>
+                            <p class="card-text">${p.price}$</p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Mô tả: ${s.description}</li>
+                            <li class="list-group-item">Mô tả: ${p.description}</li>
                         </ul>
                         <div class="card-body">
-                            <a href="/detail?s_id=${s.id}" class="card-link">Chi tiết</a>
+                            <a href="#" class="card-link">Chi tiết</a>
                             <a href="#" class="card-link">Thêm vào giỏ</a>
                         </div>
                     </div>
@@ -86,10 +84,6 @@
         </div>
     </div>
 </div>
-<footer style="text-align: center">
-    <p>Made by: Trịnh Công Khải</p>
-    <p>Email: Khaitrinh1207@gmail.com</p>
-    <p>ĐT: 0987654321</p>
-</footer>
+
 </body>
 </html>
